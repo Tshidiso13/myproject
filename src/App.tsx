@@ -10,6 +10,7 @@ import LandingPages from "./components/LandingPages"
 import WebsitesRedesign from "./components/WebsitesRedesign"
 import Wordpress from "./components/Wordpress"
 import WhatsAppButton from "./components/WhatsappButton"
+import ScrollToTop from "./components/ScrollToTop"
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
     <div>
       <Navbar />
       <WhatsAppButton />
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/services' element={<Services />} />
