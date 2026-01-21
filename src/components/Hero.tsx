@@ -48,7 +48,7 @@ const HeroSection = () => {
             </p>
 
             <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
-              I Build Modern Websites That Help Businesses Get Customers
+              We Build Modern Websites That Help Businesses Get Customers
             </h1>
 
             <p className="mt-5 text-base sm:text-lg text-white/80 max-w-xl">
