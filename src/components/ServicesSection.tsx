@@ -147,7 +147,7 @@ const ServicesSection = () => {
               backgroundColor: "rgba(139,255,240,0.18)",
             }}
           >
-            What I Offer
+            What We Offer
           </p>
 
           <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">
