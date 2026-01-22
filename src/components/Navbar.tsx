@@ -14,6 +14,7 @@ const servicesLinks: ServiceLink[] = [
   { label: "WordPress & E-Commerce", to: "/services/wordpress-ecommerce" },
 ];
 
+
 const SECONDARY = "orange";
 const PRIMARY = "#8BFFF0";
 const ANOTHER_COLOR = "#13489B";
@@ -23,7 +24,7 @@ const navLinkBase = "text-sm md:text-[15px] font-medium transition";
 const NavBar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-
+  const [scrolled, setScrolled] = useState(false);
   // hide navbar on scroll down
   const [hideNav, setHideNav] = useState(false);
   const lastScrollY = useRef(0);
@@ -44,9 +45,10 @@ const NavBar = () => {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-
       const goingDown = y > lastScrollY.current;
       const pastHero = y > 60;
+
+      setScrolled(pastHero);
 
       if (pastHero && goingDown) {
         setHideNav(true);
@@ -63,6 +65,7 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+
   const closeAll = () => {
     setMobileOpen(false);
     setServicesOpen(false);
@@ -76,7 +79,15 @@ const NavBar = () => {
       ].join(" ")}
     >
       {/* FULLY TRANSPARENT NAVBAR */}
-      <nav className="w-full">
+      <nav
+        className={[
+          "w-full transition-all duration-300",
+          scrolled
+            ? "backdrop-blur-xl border-b border-white/20 bg-white/10"
+            : "bg-transparent border-b border-transparent",
+        ].join(" ")}
+      >
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="h-[72px] flex items-center justify-between">
             {/* Logo */}
@@ -103,68 +114,67 @@ const NavBar = () => {
 
               {/* Services dropdown */}
               {/* Services dropdown */}
-<div className="relative flex items-center gap-2" ref={servicesRef}>
-  {/* Services text = clickable link (navigates) */}
-  <NavLink
-    to="/services"
-    className={navLinkBase}
-    style={({ isActive }) => ({
-      color: isActive ? SECONDARY : "orange",
-    })}
-    onClick={closeAll}
-  >
-    Services
-  </NavLink>
+              <div className="relative flex items-center gap-2" ref={servicesRef}>
+                {/* Services text = clickable link (navigates) */}
+                <NavLink
+                  to="/services"
+                  className={navLinkBase}
+                  style={({ isActive }) => ({
+                    color: isActive ? SECONDARY : "orange",
+                  })}
+                  onClick={closeAll}
+                >
+                  Services
+                </NavLink>
 
-  {/* Chevron = only toggles dropdown (no navigation) */}
-  <button
-    type="button"
-    onClick={() => setServicesOpen((prev) => !prev)}
-    className="inline-flex items-center justify-center"
-    aria-label={servicesOpen ? "Close services menu" : "Open services menu"}
-  >
-    <ChevronDown
-      className={`h-4 w-4 text-orange-500 transition-transform duration-300 ${
-        servicesOpen ? "rotate-180" : ""
-      }`}
-    />
-  </button>
+                {/* Chevron = only toggles dropdown (no navigation) */}
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen((prev) => !prev)}
+                  className="inline-flex items-center justify-center"
+                  aria-label={servicesOpen ? "Close services menu" : "Open services menu"}
+                >
+                  <ChevronDown
+                    className={`h-4 w-4 text-orange-500 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""
+                      }`}
+                  />
+                </button>
 
-  {/* Dropdown */}
-  {servicesOpen && (
-    <div
-      className="
+                {/* Dropdown */}
+                {servicesOpen && (
+                  <div
+                    className="
         absolute left-0 top-full mt-3 w-56 rounded-2xl
         bg-white/50 backdrop-blur-xl
         border border-white/40
         shadow-xl overflow-hidden
         animate-in fade-in slide-in-from-top-2 duration-200
       "
-    >
-      <div className="p-2">
-        {servicesLinks.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            onClick={closeAll}
-            className="
+                  >
+                    <div className="p-2">
+                      {servicesLinks.map((item) => (
+                        <NavLink
+                          key={item.to}
+                          to={item.to}
+                          onClick={closeAll}
+                          className="
               block rounded-xl px-3 py-2 text-sm font-medium
               text-slate-900 transition
             "
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(19,72,155,0.12)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-            }}
-          >
-            {item.label}
-          </NavLink>
-        ))}
-      </div>
-    </div>
-  )}
-</div>
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = "rgba(19,72,155,0.12)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = "transparent";
+                          }}
+                        >
+                          {item.label}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
 
 
               <NavLink
@@ -192,8 +202,8 @@ const NavBar = () => {
                 to="/contact"
                 className="rounded-xl px-4 py-2 text-sm font-medium border transition"
                 style={{
-                  borderColor: SECONDARY,
-                  color: SECONDARY,
+                  backgroundColor: PRIMARY,
+                  color: ANOTHER_COLOR,
                 }}
                 onClick={closeAll}
               >
@@ -203,7 +213,7 @@ const NavBar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-secondary"
+              className="md:hidden text-cyan-500"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
