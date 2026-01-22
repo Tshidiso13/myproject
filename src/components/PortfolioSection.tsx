@@ -52,10 +52,10 @@ const projects: Project[] = [
 ];
 
 const badgeStyles: Record<Project["industry"], { bg: string; text: string }> = {
-  Security: { bg: "rgba(19,72,155,0.12)", text: PRIMARY },
-  Cleaning: { bg: "rgba(139,255,240,0.18)", text: PRIMARY },
-  Logistics: { bg: "rgba(255,255,255,0.18)", text: "#0f172a" },
-  Construction: { bg: "rgba(19,72,155,0.10)", text: PRIMARY },
+  Security: { bg: "rgba(19,72,155,0.12)", text: SECONDARY },
+  Cleaning: { bg: "rgba(19,72,155,0.12)", text: SECONDARY },
+  Logistics: { bg: "rgba(19,72,155,0.12)", text: SECONDARY },
+  Construction: { bg: "rgba(19,72,155,0.12)", text: SECONDARY },
 };
 
 const PortfolioSection = () => {
