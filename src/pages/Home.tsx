@@ -1,4 +1,5 @@
 
+import CompanyLogoMarquee from '../components/CompanyLogoMarquee'
 import CTA from '../components/CTA'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
@@ -12,6 +13,7 @@ const Home = () => {
         <Hero />
         <ServicesSection />
         <PortfolioSection />
+        <CompanyLogoMarquee />
         <ProcessSection />
         <CTA />
         <Footer />

@@ -21,13 +21,13 @@ const steps: Step[] = [
   {
     title: "Design",
     description:
-      "I design a clean, modern layout with strong structure and clear calls-to-action for conversion.",
+      "We design a clean, modern layout with strong structure and clear calls-to-action for conversion.",
     icon: <PencilRuler className="h-5 w-5" />,
   },
   {
     title: "Development",
     description:
-      "I build a fast, responsive website with smooth UI, optimized performance, and solid SEO foundations.",
+      "We build a fast, responsive website with smooth UI, optimized performance, and solid SEO foundations.",
     icon: <Code2 className="h-5 w-5" />,
   },
   {
