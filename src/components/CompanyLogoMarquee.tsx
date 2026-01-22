@@ -1,6 +1,6 @@
 // src/components/CompanyLogoMarquee.tsx
 
-
+import Logo1 from "../assets/logo-1.png";
 import Logo3 from "../assets/logo-3.png";
 import Logo4 from "../assets/logo-4.png";
 import Logo5 from "../assets/logo-5.png";
@@ -8,7 +8,7 @@ import Logo6 from "../assets/logo-6.png";
 import Logo7 from "../assets/logo-7.png";
 
 
-const companyLogos = [  Logo3, Logo4, Logo5, Logo6, Logo7];
+const companyLogos = [ Logo1, Logo3, Logo4, Logo5, Logo6, Logo7];
 const PRIMARY = "#13489B";
 
 const CompanyLogoMarquee = () => {
