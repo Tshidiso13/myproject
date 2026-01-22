@@ -41,7 +41,7 @@ const projects: Project[] = [
     category: "Business Website",
     tech: ["React", "Vite", "Tailwind CSS"],
     image: WorkSecurityImg,
-    liveUrl: "https://your-security-demo.vercel.app/",
+    liveUrl: "https://security-company-seven.vercel.app/",
     highlights: [
       "Trust-first layout with clear service sections",
       "Fast, mobile-first UI with WhatsApp enquiry flow",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     category: "Business Website",
     tech: ["React", "Tailwind CSS", "Responsive UI"],
     image: WorkCleaningImg,
-    liveUrl: "https://your-cleaning-demo.vercel.app/",
+    liveUrl: "https://cleaning-compnay.vercel.app/",
     highlights: [
       "Conversion-focused hero + quote form",
       "Service cards + FAQs for common questions",
@@ -67,7 +67,7 @@ const projects: Project[] = [
     category: "Landing Page",
     tech: ["React", "Tailwind CSS", "Vercel"],
     image: WorkLogisticsImg,
-    liveUrl: "https://your-logistics-demo.vercel.app/",
+    liveUrl: "https://logistics-company-nine.vercel.app/",
     highlights: [
       "Strong CTA placement and clean information hierarchy",
       "Fleet/solutions layout built for B2B trust",
@@ -80,7 +80,7 @@ const projects: Project[] = [
     category: "Redesign",
     tech: ["React", "Tailwind CSS", "UI/UX"],
     image: WorkConstructionImg,
-    liveUrl: "https://your-construction-demo.vercel.app/",
+    liveUrl: "https://construction-company-wheat.vercel.app/",
     highlights: [
       "Modern redesign with better project presentation",
       "Improved flow: services → proof → contact",

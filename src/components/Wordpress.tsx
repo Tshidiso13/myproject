@@ -47,7 +47,7 @@ const coreFeatures: Feature[] = [
     icon: <Boxes className="h-5 w-5" />,
   },
   {
-    title: "Secure checkout + payment integration (PayFast/Paystack/Stripe-ready)",
+    title: "Secure checkout + payment integration (PayFast/Paystack)",
     desc: "We configure secure payments and ensure checkout is smooth and trustworthy—built to reduce cart abandonment.",
     icon: <CreditCard className="h-5 w-5" />,
   },
@@ -217,7 +217,7 @@ export default function Wordpress() {
                     backdropFilter: "blur(10px)",
                   }}
                 >
-                  WhatsApp Us
+                  WhatsApp 
                 </a>
 
                 <a
