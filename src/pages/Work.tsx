@@ -17,6 +17,7 @@ import WorkCleaningImg from "../assets/cleaning.png";
 import WorkLogisticsImg from "../assets/logistics.png";
 import WorkConstructionImg from "../assets/construction.png";
 import Footer from "../components/Footer";
+import CompanyLogoMarquee from "../components/CompanyLogoMarquee";
 
 const PRIMARY = "#13489B";
 const SECONDARY = "#8BFFF0";
@@ -448,6 +449,7 @@ const Work = () => {
               <WorkCard key={p.name} project={p} />
             ))}
           </div>
+          <CompanyLogoMarquee />
 
           {/* Extra credibility strip */}
           <div className="mt-12 rounded-3xl border bg-white/30 backdrop-blur-xl shadow-lg p-7 sm:p-8"

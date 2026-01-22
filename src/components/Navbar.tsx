@@ -16,6 +16,7 @@ const servicesLinks: ServiceLink[] = [
 
 const SECONDARY = "orange";
 const PRIMARY = "#8BFFF0";
+const ANOTHER_COLOR = "#13489B";
 
 const navLinkBase = "text-sm md:text-[15px] font-medium transition";
 
@@ -237,8 +238,8 @@ const NavBar = () => {
                 onClick={closeAll}
                 className="px-6 py-3 text-sm font-semibold rounded-2xl self-start max-w-[85%] transition"
                 style={{
-                  backgroundColor: SECONDARY,
-                  color: PRIMARY,
+                  backgroundColor: PRIMARY,
+                  color: ANOTHER_COLOR,
                 }}
               >
                 Contact
