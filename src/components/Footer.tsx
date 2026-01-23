@@ -114,15 +114,7 @@ const Footer = () => {
                 <Github />
               </a>
 
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#8BFFF0] transition"
-                aria-label="LinkedIn"
-              >
-                <Linkedin />
-              </a>
+          
 
               <a
                 href="https://www.instagram.com/code_by.tshidiso?igsh=MW40bDJ1MGp4anJ5Mg=="
