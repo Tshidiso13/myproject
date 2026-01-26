@@ -106,7 +106,7 @@ const pagesIncluded = [
   "Policies (returns/shipping/privacy) template-ready",
 ];
 
-const payments = ["PayFast", "Paystack", "Stripe (ready)", "Manual EFT (optional)"];
+const payments = ["PayFast", "Paystack", "Manual EFT (optional)"];
 
 const faqs = [
   {

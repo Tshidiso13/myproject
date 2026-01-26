@@ -82,7 +82,7 @@ const Footer = () => {
                   href="mailto:tshidisomexico@gmail.com"
                   className="hover:text-[#8BFFF0] transition"
                 >
-                  tshidisomexico@gmail.com
+                  info@tshidiso.co.za
                 </a>
               </li>
               <li className="flex items-center gap-2">

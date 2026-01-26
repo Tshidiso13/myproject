@@ -6,11 +6,14 @@ const PRIMARY = "#13489B";
 const SECONDARY = "#8BFFF0";
 
 const WHATSAPP_NUMBER = "27658207639";
-const EMAIL = "tshidisomexico@gmail.com";
+const EMAIL = "info@tshidiso.co.za";
 const LOCATION = "Pretoria, South Africa";
 
-// ✅ Put your Formspree endpoint here
-const FORM_ENDPOINT = "https://formspree.io/f/xpqqkqbz";
+// ✅ Web3Forms endpoint (fixed)
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
+// ✅ Put your Web3Forms access key here
+const WEB3FORMS_ACCESS_KEY = "e4ac0625-10be-4820-97cc-708f1aca68e8";
 
 type Faq = { q: string; a: string };
 
@@ -69,20 +72,32 @@ export default function Contact() {
     if (!form.message.trim()) return setStatus("error"), setError("Please tell us about your project.");
 
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+
+          // Optional: helps your inbox filter / identify submissions
+          subject: `New Website Enquiry — ${form.websiteType || "General"}`,
+          from_name: form.fullName,
+
+          // Your fields
           name: form.fullName,
           phone: form.phone,
           email: form.email,
           websiteType: form.websiteType,
           timeline: form.timeline,
           message: form.message,
+
+          // Optional: useful metadata
+          to_email: EMAIL,
         }),
       });
 
-      if (!res.ok) {
+      const data = await res.json();
+
+      if (!res.ok || !data?.success) {
         throw new Error("Failed to send.");
       }
 
